@@ -1,0 +1,25 @@
+@import "../../styles/base.scss";
+
+h1 {
+  color: $marine-blue;
+  max-height: 50px;
+}
+
+.last-page {
+  @include flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  p {
+    max-height: 100px;
+    max-width: 420px;
+    text-align: center;
+    color: $cool-gray;
+  }
+}
+
+.img {
+  max-height: 50px;
+}

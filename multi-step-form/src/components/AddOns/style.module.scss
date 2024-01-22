@@ -1,0 +1,50 @@
+@import "../../styles/base.scss";
+
+h3 {
+  height: 30px;
+  color: $marine-blue;
+}
+
+input {
+  width: 15px;
+  height: 15px;
+}
+
+.add-ons {
+  @include flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 90%;
+  max-height: 50px;
+  h1 {
+    color: $marine-blue;
+  }
+  p {
+    color: $cool-gray;
+  }
+  .pack {
+    @include flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+    .box-pack {
+      @include flex;
+      justify-content: space-between;
+      height: 86px;
+      padding: 20px;
+      border: 1px solid $cool-gray;
+      border-radius: 8px;
+      cursor: pointer;
+      .checkbox {
+        @include flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .prices {
+        @include flex;
+        align-items: center;
+        color: $purplish-blue;
+      }
+    }
+  }
+}

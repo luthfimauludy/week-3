@@ -1,0 +1,74 @@
+@import "../../styles/base.scss";
+
+h3 {
+  height: 30px;
+  color: $marine-blue;
+}
+
+input {
+  width: 15px;
+  height: 15px;
+}
+
+.summary {
+  @include flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 90%;
+  max-height: 50px;
+  h1 {
+    color: $marine-blue;
+  }
+  p {
+    color: $cool-gray;
+  }
+  .payout {
+    min-height: 180px;
+    margin-top: 40px;
+    padding: 0 20px 100px 20px;
+    background-color: $magnolia;
+    border-radius: 10px;
+    .box-title {
+      @include flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $light-gray;
+      span {
+        @include flex;
+        color: $marine-blue;
+        font-weight: 600;
+        align-items: center;
+      }
+      .title {
+        @include flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+          height: 20px;
+        }
+      }
+    }
+    .sub-title {
+      @include flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      p {
+        height: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .total {
+      @include flex;
+      align-items: end;
+      justify-content: space-between;
+      p {
+        height: 20px;
+        margin-top: 30px;
+      }
+      .total-price {
+        color: $purplish-blue;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+}
