@@ -1,6 +1,6 @@
 import classes from "./style.module.scss";
 
-import iconThanks from "../../assets/img/icon-thank-you.svg";
+import iconThanks from "../../../../assets/img/icon-thank-you.svg";
 
 const LastPage = () => {
   return (

@@ -1,6 +1,6 @@
-import iconArcade from "../../assets/img/icon-arcade.svg";
-import iconAdvanced from "../../assets/img/icon-advanced.svg";
-import iconPro from "../../assets/img/icon-pro.svg";
+import iconArcade from "../../../../assets/img/icon-arcade.svg";
+import iconAdvanced from "../../../../assets/img/icon-advanced.svg";
+import iconPro from "../../../../assets/img/icon-pro.svg";
 
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";

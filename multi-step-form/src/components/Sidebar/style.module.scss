@@ -26,6 +26,11 @@
       border: 1px solid $light-gray;
       border-radius: 100%;
     }
+    .active {
+      border: 2px solid $light-blue;
+      background-color: $light-blue;
+      color: $marine-blue;
+    }
     .text-step {
       @include flex;
       flex-direction: column;
