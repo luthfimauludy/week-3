@@ -1,6 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
-
-import { setStep } from "./action";
+import { useSelector } from "react-redux";
 
 import AddOns from "./components/AddOns";
 import Info from "./components/Info";
@@ -11,18 +9,9 @@ import Summary from "./components/Summary";
 import classes from "./style.module.scss";
 
 const Home = () => {
-  const dispatch = useDispatch();
   const currentStep = useSelector((state) => state.homeReducer.step);
 
   console.log(currentStep, "Current Step");
-
-  const stepHanlder = () => {
-    if (currentStep === 5) {
-      dispatch(setStep(1));
-    } else {
-      dispatch(setStep(currentStep + 1));
-    }
-  };
 
   const renderComponent = () => {
     switch (currentStep) {
@@ -109,30 +98,6 @@ const Home = () => {
       <div className={classes["main-content"]}>
         <div className={classes["info"]}>
           <div>{renderComponent()}</div>
-          {currentStep < 5 && (
-            <div
-              className={
-                currentStep === 1 ? classes["btn-alternative"] : classes["btn"]
-              }
-            >
-              {currentStep > 1 && (
-                <button
-                  type="submit"
-                  className={classes["btn-back"]}
-                  onClick={() => dispatch(setStep(currentStep - 1))}
-                >
-                  Back
-                </button>
-              )}
-              <button
-                type="submit"
-                className={classes["btn-next"]}
-                onClick={stepHanlder}
-              >
-                {currentStep < 4 ? "Next Step" : "Confirm"}
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </div>

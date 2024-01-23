@@ -7,6 +7,9 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 
 import classes from "./style.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { setOrder, setStep } from "../../action";
+import { useState } from "react";
 
 const SwitchIOS = styled((props) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -60,13 +63,95 @@ const SwitchIOS = styled((props) => (
 }));
 
 const Plan = () => {
+  const dispatch = useDispatch();
+  const currentStep = useSelector((state) => state.homeReducer.step);
+  const currentOrder = useSelector((state) => state.homeReducer.order);
+
+  const [type, setType] = useState("");
+  const [price, setPrice] = useState(0);
+  const [chosenPackage, setChosenPackage] = useState();
+  const [duration, setDuration] = useState("Monthly");
+
+  const nextHandler = () => {
+    onSubmit();
+    dispatch(setStep(currentStep + 1));
+  };
+
+  const backHandler = () => {
+    dispatch(setStep(currentStep - 1));
+  };
+
+  const clearState = () => {
+    setType("");
+    setPrice(0);
+    setChosenPackage();
+  };
+
+  const arcadeMonthly = () => {
+    clearState();
+    setChosenPackage(1);
+    setPrice(9);
+    setType("Arcade");
+  };
+
+  const advancedMonthly = () => {
+    clearState();
+    setChosenPackage(2);
+    setPrice(12);
+    setType("Advanced");
+  };
+
+  const proMonthly = () => {
+    clearState();
+    setChosenPackage(3);
+    setPrice(15);
+    setType("Pro");
+  };
+
+  const arcadeYearly = () => {
+    clearState();
+    setChosenPackage(1);
+    setPrice(90);
+    setType("Arcade");
+  };
+
+  const advancedYearly = () => {
+    clearState();
+    setChosenPackage(2);
+    setPrice(120);
+    setType("Advanced");
+  };
+
+  const proYearly = () => {
+    clearState();
+    setChosenPackage(3);
+    setPrice(150);
+    setType("Pro");
+  };
+
+  const onSubmit = () => {
+    dispatch(
+      setOrder({
+        ...currentOrder,
+        type,
+        price,
+        duration,
+      })
+    );
+  };
+
   return (
     <div className={classes["plan"]}>
       <h1>Select your plan</h1>
       <p>You have the option of monthly or yearly billing.</p>
       <div className={classes["plans-card"]}>
         <div>
-          <div className={classes["card"]}>
+          <div
+            onClick={arcadeMonthly}
+            className={
+              chosenPackage === 1 ? classes["card-selected"] : classes["card"]
+            }
+          >
             <img src={iconArcade} alt="Arcade" />
             <div className={classes["title"]}>
               <h3>Arcade</h3>
@@ -75,20 +160,30 @@ const Plan = () => {
           </div>
         </div>
         <div>
-          <div className={classes["card"]}>
-            <img src={iconAdvanced} alt="Arcade" />
+          <div
+            onClick={advancedMonthly}
+            className={
+              chosenPackage === 2 ? classes["card-selected"] : classes["card"]
+            }
+          >
+            <img src={iconAdvanced} alt="Advanced" />
             <div className={classes["title"]}>
-              <h3>Arcade</h3>
-              <p>$9/mo</p>
+              <h3>Advanced</h3>
+              <p>$12/mo</p>
             </div>
           </div>
         </div>
         <div>
-          <div className={classes["card"]}>
-            <img src={iconPro} alt="Arcade" />
+          <div
+            onClick={proMonthly}
+            className={
+              chosenPackage === 3 ? classes["card-selected"] : classes["card"]
+            }
+          >
+            <img src={iconPro} alt="Pro" />
             <div className={classes["title"]}>
-              <h3>Arcade</h3>
-              <p>$9/mo</p>
+              <h3>Pro</h3>
+              <p>$15/mo</p>
             </div>
           </div>
         </div>
@@ -100,6 +195,30 @@ const Plan = () => {
         />
         <span>Yearly</span>
       </label>
+      {currentStep < 5 && (
+        <div
+          className={
+            currentStep === 1 ? classes["btn-alternative"] : classes["btn"]
+          }
+        >
+          {currentStep > 1 && (
+            <button
+              type="submit"
+              className={classes["btn-back"]}
+              onClick={backHandler}
+            >
+              Back
+            </button>
+          )}
+          <button
+            type="submit"
+            className={classes["btn-next"]}
+            onClick={nextHandler}
+          >
+            {currentStep < 4 ? "Next Step" : "Confirm"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
