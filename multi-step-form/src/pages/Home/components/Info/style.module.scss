@@ -30,17 +30,48 @@ p {
     }
   }
 }
-.btn {
+.info {
   @include flex;
-  justify-content: end;
-  margin-top: 150px;
-  button {
-    padding: 10px 20px;
-    background-color: $marine-blue;
-    border: none;
-    color: $light-gray;
-    border-radius: 5px;
-    height: 40px;
-    cursor: pointer;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 90%;
+  max-height: 50px;
+  .btn {
+    @include flex;
+    justify-content: space-between;
+    margin-top: 420px;
+    .btn-next {
+      padding: 10px 20px;
+      background-color: $marine-blue;
+      border: none;
+      color: $light-gray;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
+    .btn-back {
+      padding: 10px 20px;
+      background-color: transparent;
+      color: $marine-blue;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+  .btn-alternative {
+    @include flex;
+    justify-content: end;
+    margin-top: 300px;
+    .btn-next {
+      padding: 10px 20px;
+      background-color: $marine-blue;
+      border: none;
+      color: $light-gray;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
   }
 }

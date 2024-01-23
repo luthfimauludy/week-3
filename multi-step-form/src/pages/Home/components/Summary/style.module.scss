@@ -16,59 +16,115 @@ input {
   gap: 20px;
   max-width: 90%;
   max-height: 50px;
+
   h1 {
     color: $marine-blue;
   }
+
   p {
     color: $cool-gray;
   }
+
   .payout {
     min-height: 180px;
     margin-top: 40px;
     padding: 0 20px 100px 20px;
     background-color: $magnolia;
     border-radius: 10px;
+
     .box-title {
       @include flex;
       justify-content: space-between;
       border-bottom: 1px solid $light-gray;
+
       span {
         @include flex;
         color: $marine-blue;
         font-weight: 600;
         align-items: center;
       }
+
       .title {
         @include flex;
         flex-direction: column;
         justify-content: center;
-        p {
+
+        button {
           height: 20px;
+          border: none;
         }
       }
     }
+
     .sub-title {
       @include flex;
       justify-content: space-between;
       padding-top: 20px;
+
       p {
         height: 20px;
         margin-bottom: 20px;
       }
     }
+
     .total {
       @include flex;
       align-items: end;
       justify-content: space-between;
+
       p {
         height: 20px;
         margin-top: 30px;
       }
+
       .total-price {
         color: $purplish-blue;
         font-size: 20px;
         font-weight: 600;
       }
+    }
+  }
+
+  .btn {
+    @include flex;
+    justify-content: space-between;
+    margin-top: 80px;
+
+    .btn-next {
+      padding: 10px 20px;
+      background-color: $marine-blue;
+      border: none;
+      color: $light-gray;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .btn-back {
+      padding: 10px 20px;
+      background-color: transparent;
+      color: $marine-blue;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  .btn-alternative {
+    @include flex;
+    justify-content: end;
+    margin-top: 300px;
+
+    .btn-next {
+      padding: 10px 20px;
+      background-color: $marine-blue;
+      border: none;
+      color: $light-gray;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
     }
   }
 }

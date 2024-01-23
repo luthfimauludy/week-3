@@ -16,17 +16,21 @@ input {
   gap: 10px;
   max-width: 90%;
   max-height: 50px;
+
   h1 {
     color: $marine-blue;
   }
+
   p {
     color: $cool-gray;
   }
+
   .pack {
     @include flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
+
     .box-pack {
       @include flex;
       justify-content: space-between;
@@ -35,16 +39,61 @@ input {
       border: 1px solid $cool-gray;
       border-radius: 8px;
       cursor: pointer;
+
       .checkbox {
         @include flex;
         gap: 20px;
         align-items: center;
       }
+
       .prices {
         @include flex;
         align-items: center;
         color: $purplish-blue;
       }
+    }
+  }
+
+  .btn {
+    @include flex;
+    justify-content: space-between;
+    margin-top: 80px;
+
+    .btn-next {
+      padding: 10px 20px;
+      background-color: $marine-blue;
+      border: none;
+      color: $light-gray;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .btn-back {
+      padding: 10px 20px;
+      background-color: transparent;
+      color: $marine-blue;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  .btn-alternative {
+    @include flex;
+    justify-content: end;
+    margin-top: 300px;
+
+    .btn-next {
+      padding: 10px 20px;
+      background-color: $marine-blue;
+      border: none;
+      color: $light-gray;
+      border-radius: 5px;
+      height: 40px;
+      cursor: pointer;
     }
   }
 }
