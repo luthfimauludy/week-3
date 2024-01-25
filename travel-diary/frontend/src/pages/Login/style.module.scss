@@ -1,0 +1,76 @@
+@import '@styles/base';
+
+.container {
+  @include directionX;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: black;
+  padding: 100px 0;
+
+  .mainContent {
+    @include directionY;
+    background-color: $color-white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    gap: 10px;
+    @include apply-at-sm-size {
+      padding: 10px 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    form {
+      @include directionY;
+      gap: 20px;
+
+      .formInput {
+        @include directionY;
+        gap: 5px;
+
+        label {
+          font-weight: 900;
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        input {
+          min-width: 350px;
+          font-size: 20px;
+          border-radius: 10px;
+          border: 2px solid rgba(210, 210, 210, 0.25);
+          background-color: rgba(210, 210, 210, 0.25);
+          outline: none;
+          padding: 15px 20px;
+          @include apply-at-sm-size {
+            max-width: 250px;
+          }
+        }
+      }
+
+      button {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        color: $color-white;
+        background-color: $btn-color;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 10px;
+        margin: 20px 0;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+}

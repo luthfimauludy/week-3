@@ -1,0 +1,52 @@
+@import '@styles/base';
+
+.boxGrid {
+  font-family: 'Poppins', sans-serif;
+  background-color: $color-white;
+  max-width: 300px;
+
+  .boxImg {
+    position: relative;
+
+    button {
+      position: absolute;
+      right: 5px;
+      top: 4px;
+      border: none;
+      border-radius: 100%;
+      background-color: $color-white;
+      color: $btn-color;
+      cursor: pointer;
+    }
+  }
+
+  .boxTitle {
+    @include directionY;
+    gap: 10px;
+    padding: 20px;
+
+    .title {
+      @include directionY;
+      gap: 10px;
+
+      h3 {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: rgba(191, 191, 191, 1);
+      }
+    }
+
+    .subTitle {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

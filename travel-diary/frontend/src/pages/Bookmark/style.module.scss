@@ -1,0 +1,24 @@
+@import '@styles/base';
+
+.container {
+  width: 100%;
+  padding: 100px 0;
+
+  .headText {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 56px;
+    padding: 30px;
+    margin-bottom: 50px;
+
+    h1 {
+      font-family: $font-roboto;
+      color: black;
+      font-size: 48px;
+    }
+  }
+
+  .gridWrapper {
+    padding: 30px;
+  }
+}

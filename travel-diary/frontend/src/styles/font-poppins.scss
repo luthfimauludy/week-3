@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+$font-roboto: 'Roboto', sans-serif;
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 200;
+  src: url('/src/static/fonts/poppins/poppins_thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/src/static/fonts/poppins/poppins_light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/src/static/fonts/poppins/poppins_regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/src/static/fonts/poppins/poppins_medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/src/static/fonts/poppins/poppins_semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/src/static/fonts/poppins/poppins_bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: italic;
+  src: url('/src/static/fonts/poppins/poppins_italic.ttf') format('truetype');
+}

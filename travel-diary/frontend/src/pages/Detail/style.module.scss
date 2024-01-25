@@ -1,0 +1,72 @@
+@import '@styles/base';
+
+.container {
+  width: 100%;
+  padding: 100px 60px;
+
+  .sectionWrapper {
+    @include directionY;
+    gap: 30px;
+  }
+
+  .headText {
+    @include directionX;
+    justify-content: space-between;
+    font-family: $font-roboto;
+
+    h1 {
+      color: black;
+      font-size: 48px;
+      font-weight: 100;
+      font-style: italic;
+      line-height: 56px;
+    }
+
+    p {
+      font-weight: 100;
+      font-style: italic;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+
+  .dateText {
+    font-weight: 400;
+    font-size: 24px;
+    font-weight: 36px;
+    color: $btn-color;
+  }
+
+  .boxDetail {
+    @include directionY;
+    gap: 50px;
+
+    .textDetail {
+      @include directionY;
+      gap: 50px;
+      font-family: $font-roboto;
+      font-weight: 100;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 26px;
+      color: rgba(108, 108, 108, 1);
+
+      .textIndent {
+        text-indent: 50px;
+      }
+
+      p {
+        text-align: justify;
+      }
+
+      h1 {
+        max-width: 380px;
+        font-weight: 100;
+        font-style: italic;
+        font-size: 36px;
+        line-height: 42px;
+        color: black;
+      }
+    }
+  }
+}
